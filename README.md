@@ -10,10 +10,12 @@ You'll need Python 2.7 or Python 3.6 to run this code. You'll also need to insta
 We completed our Image Classification Pipeline together today during class. Assuming you have all the requirements installed on your system, you can run the completed version of our code in the file **run_model.py**. You will need to download and extract the **data.zip** folder in order to run this program. The rest is for you to explore and discover! Refer back to the *image-classification.md* for the full tutorial and additional references.
 
 <center>
+
 ![img](http://i.imgur.com/Tbm9CIP.png)
+
 <div class="figcaption"> Example of the resized, grayscale 32x32 images in our training set.
 </center>
-
+  
 ## Explore and Play Around
 ### Task 1: Input
 You can change the image size, the color map, and normalization (try dividing the images by the standard deviation). You can also explore [data augmentation](https://github.com/codebox/image_augmentor) or try making a [bigger dataset](https://github.com/philipqlu/image_scrapers) with more classes.
