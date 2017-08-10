@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /image-classification-kmutt-tut/
+permalink: /image-classification/
 ---
 
 Table of Contents:
