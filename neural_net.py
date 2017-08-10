@@ -1,8 +1,6 @@
-from __future__ import print_function
-
-import numpy as np
-import matplotlib.pyplot as plt
-from past.builtins import xrange
+################################################################################
+# TEAM B Task: Complete the 2 layer NN weight initialization and forward pass  #
+################################################################################
 
 class TwoLayerNet(object):
   """
@@ -83,7 +81,7 @@ class TwoLayerNet(object):
     #############################################################################
     #                              END OF YOUR CODE                             #
     #############################################################################
-    
+
     # If the targets are not given then jump out, we're done
     if y is None:
       return scores
@@ -206,8 +204,8 @@ class TwoLayerNet(object):
       #                             END OF YOUR CODE                          #
       #########################################################################
 
-      if verbose and it % 100 == 0:
-        print('iteration %d / %d: loss %f' % (it, num_iters, loss))
+      if verbose and it % 10 == 0:
+        print('iteration %d / %d: loss %f, val acc %f' % (it, num_iters, loss, val_acc))
 
       # Every epoch, check train and val accuracy and decay learning rate.
       if it % iterations_per_epoch == 0:
@@ -244,7 +242,7 @@ class TwoLayerNet(object):
     y_pred = None
 
     ###########################################################################
-    # TODO: Implement this function; it should be VERY simple!                #
+    # TODO: (TEAM C) Implement this function; it should be VERY simple!       #
     ###########################################################################
     l2 = X.dot(self.params['W1']) + self.params['b1']
     a2 = np.maximum(0,l2)
@@ -255,5 +253,3 @@ class TwoLayerNet(object):
     ###########################################################################
 
     return y_pred
-
-

@@ -17,17 +17,17 @@ Table of Contents:
 <a name='intro'></a>
 
 ## Introduction
-Image Classification is the task of assigning an input image one label from a fixed set of categories. This is really important in Computer Vision! If you are trying to do object detection, facial expression recognition, or even medical imaging, Image Classification is at the heart of those tasks. Today, we are going to learn and walk through creating an image classifier using Python. Because it's so early in your Machine Learning course, today's tutorial is mainly intended to be a super fast, **informal** and **fun** introduction to one of the coolest (in my opinion) areas in supervised learning.
+Image Classification is the task of assigning an input image one label from a fixed set of categories. This is really important in Computer Vision! If you are trying to do object detection, facial expression recognition, or even medical imaging, Image Classification is at the heart of those tasks. Today, we are going to learn and walk through creating an image classifier using Python. Because it's so early in your Machine Learning course, today's tutorial is mainly intended to be a quick, **informal** and **fun** introduction to one of the coolest (in my opinion) areas in supervised learning.
 
 
 <a name='goal'></a>
 
 ## Today's Goal
-Today's goal is jump into a practical machine learning problem without worrying too much about the theory. We are going to split into three teams, based on a simple **Image Classification Pipeline**, which I will describe below. The task today is to classify images into one of four categories: **Cat, Justin Trudeau, Som Tam,** and **Temple**. Go to the *data/train_ex* folder to see examples of some of these images now.
+Today's goal is jump into a practical machine learning problem without worrying too much about the theory. We are going to split into three teams, based on a simple **Image Classification Pipeline**, which I will describe below. The task today is to classify images into one of four categories: **Cat, Justin Trudeau, Som Tam,** and **Temple**. Go to the *examples/train_ex* folder to see examples of some of these images now. The full dataset with labels is in the *data.zip* file.
 
 **Format:** This is going to be an informal tutorial so most of the details will be explained as we go along in the class. Each team will be working on one of the three components of the pipeline. Each team will have tasks to complete. 
 
-**You can complete each task by writing actual code, or just by explaining or writing down a solution.** Once you have solved a task, call me over and I will verify your answers. By the end of the class, I will compile your solutions into a functioning image classifier!
+**You can complete each task by writing actual code, or just by explaining or writing down a solution on pen and paper.** Once you have solved a task, call me over and I will verify your answers. By the end of the class, I will compile your solutions into a functioning image classifier!
 
 <a name='pipeline'></a>
 
@@ -91,7 +91,7 @@ Now that we have our data, we need to perform some computation on it. Essentiall
 Earlier we talked about *train* and *test* sets. In the end, what matters is your **test performance**, which is how many correct predictions your trained model makes on **new data**.
 
 #### Tasks:
-1. Write code to pass in an input `X` to your model and predict `y`.
+1. Write a `predict` function that feeds in an input `X` to the network and predicts `y`. Work with the **Learning** team and the file *neural-net.py* to complete this task.
 2. Compute the number of correct predictions and divide this by the total number of `y`.
 3. Print this value to the console.
 
