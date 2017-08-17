@@ -77,17 +77,9 @@ def load_data(train_folder, test_folder):
         X_test.append(image_flat)
         y_test.append(data_dicts[image_file])
 
-    ################################################################################
-    # TODO:                                                                        #
-    # Compute the mean image of X and subtract that from train and test images     #
-    ################################################################################
-    X_train = X_train - np.mean(X_train, axis=0)
-    X_test  = X_test - np.mean(X_test, axis=0)
-    ################################################################################
-    #                              END OF YOUR CODE                                #
-    ################################################################################
 
-
+    X_train = np.asarray(X_train)
+    X_test = np.asarray(X_test)
     y_train = np.asarray(y_train)
     y_test = np.asarray(y_test)
 
@@ -129,8 +121,15 @@ for y, cls in enumerate(classes):
 plt.show()
 
 
-# In[ ]:
-
+################################################################################
+# TODO:                                                                        #
+# Compute the mean image of X and subtract that from train and test images     #
+################################################################################
+X_train = X_train - np.mean(X_train, axis=0)
+X_test  = X_test - np.mean(X_train, axis=0)
+################################################################################
+#                              END OF YOUR CODE                                #
+    ################################################################################
 
 ################################################################################
 # TEAM B Task: Complete the 2 layer NN weight initialization and forward pass  #
@@ -390,26 +389,24 @@ class TwoLayerNet(object):
 
 # In[ ]:
 
-input_size = 32 * 32 * 1
 
 # Create a 3rd dataset, the validation set, for tuning our hyperparameters.
-# We'll take 20% of the training set, so now our data has a 60/15/25 split.
-# That means 60% of all data is training, 15% validation and 25% Testing.
 
 split_percent = (0.25)
-split_index = int(split_percent*len(X_train))
+split_index = int((1-split_percent)*len(X_train))
 X_train, y_train = X_train[:split_index], y_train[:split_index]
-
+X_val, y_val = X_train[split_index:], y_train[split_index:]
 ################################################################################
 # TODO: (Everyone) Play around with the parameters of our network to maximize  #
 #                  the validation accuracy.                                    #
 ################################################################################
 hidden_size = 50
 num_classes = 4
+input_size = 32 * 32 * 1
 
 net = TwoLayerNet(input_size, hidden_size, num_classes)
 
-stats = net.train(X_train[:250], y_train[:250], X_train[250:], y_train[250:],
+stats = net.train(X_train, y_train, X_val, y_val,
             num_iters=100, batch_size=64,
             learning_rate=1e-4, learning_rate_decay=0.95,
             reg=0.25, verbose=True)
